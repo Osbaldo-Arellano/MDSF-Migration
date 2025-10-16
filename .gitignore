@@ -1,0 +1,36 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Data files
+*.csv
+*.xlsx
+*.xls
+
+# Output files
+*_with_seo.csv
+*_updated.csv
+*_output/
+
+# Asset folders (if large)
+static_assets/
+static_assets_thumbnails/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

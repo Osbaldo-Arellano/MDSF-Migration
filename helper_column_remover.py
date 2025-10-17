@@ -64,7 +64,7 @@ def clean_helper_columns(input_csv, output_csv):
 
 if __name__ == "__main__":
     # Get input/output files
-    input_csv = sys.argv[1] if len(sys.argv) > 1 else "Final-Sample-AFC.csv"
+    input_csv = sys.argv[1] if len(sys.argv) > 1 else "full_migration_data_AFC_Urgent_Care.csv"
     output_csv = sys.argv[2] if len(sys.argv) > 2 else input_csv.replace('.csv', '_clean.csv')
     
     # Clean the CSV

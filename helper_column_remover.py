@@ -5,6 +5,7 @@ from pathlib import Path
 def clean_helper_columns(input_csv, output_csv):
     """
     Remove helper columns from CSV before MDSF import
+    Helper columns: Those that contain refs to uStore-specific data 
     """
     print("="*80)
     print("COLUMN CLEANER - Remove Helper Columns")

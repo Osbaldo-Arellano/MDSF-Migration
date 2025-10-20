@@ -1,0 +1,55 @@
+{
+    "store_id": 70,
+    "store_name": "AFC Urgent Care",
+    "use_auto_thumbnail": true,
+    "test_mode": false,
+    "test_product_limit": 1,
+    
+    "paths": {
+        "assets_dir": "static_assets",
+        "thumbnails_dir": "static_assets_thumbnails",
+        "output_dir": "../output"
+    },
+    
+    "steps": {
+        "filter": {
+            "enabled": true,
+            "script": "store_filter.py",
+            "input": "uStore_Complete_Export.csv",
+            "output": "Store_Export.csv",
+            "description": "Filter products by store from complete export"
+        },
+        "seo_generation": {
+            "enabled": true,
+            "script": "SEO_generator.py",
+            "output": "with_seo.csv",
+            "description": "Generate SEO titles and keywords"
+        },
+        "asset_linking": {
+            "enabled": true,
+            "script": "asset_linker.py",
+            "output": "with_assets.csv",
+            "description": "Link PDF and image assets to products"
+        },
+        "mdsf_mapping": {
+            "enabled": true,
+            "script": "fields_mapper.py",
+            "output": "mdsf_import.csv",
+            "description": "Map fields to MDSF 61-column format"
+        },
+        "packaging": {
+            "enabled": true,
+            "script": "packager.py",
+            "output": "MDSF_Import_Package.zip",
+            "description": "Create final ZIP package with CSV and assets"
+        }
+    },
+    
+    "comments": {
+        "store_id": "Filter products by store ID (70 = AFC Urgent Care)",
+        "test_mode": "When true, processes only test_product_limit products",
+        "use_auto_thumbnail": "When true, uses AutoThumbnail instead of image files",
+        "steps.enabled": "Set to false to skip a step in the pipeline",
+        "steps.filter.input": "Path to complete uStore export CSV (relative to project root)"
+    }
+}
